@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Galerie privée</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: white;
+      text-align: center;
+    }
+    h1 {
+      padding: 20px;
+      font-size: 2em;
+      color: #FFD700;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      padding: 10px 20px;
+    }
+    .gallery img, .gallery video {
+      width: 100%;
+      border-radius: 10px;
+      user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: none;
+    }
+    video {
+      max-height: 300px;
+    }
+  </style>
+  <script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('dragstart', event => event.preventDefault());
+    document.addEventListener('selectstart', event => event.preventDefault());
+  </script>
+
+<style>
+  .gallery img:hover {
+    transform: scale(1.8);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    position: relative;
+  }
+</style>
+
+</head>
+<body>
+  <button onclick="window.close()" style="position: fixed; top: 10px; right: 10px; background: #FF4444; color: white; border: none; padding: 10px 15px; border-radius: 5px; font-size: 14px; cursor: pointer; z-index: 9999;">Fermer</button>
+  <h1>Galerie Privée 🔒</h1>
+  <div class="gallery">
+    <img src="image1.jpg" alt="image 1" />
+<img src="image2.jpg" alt="image 2" />
+<img src="image3.jpg" alt="image 3" />
+<img src="image4.jpg" alt="image 4" />
+<img src="image5.jpg" alt="image 5" />
+<img src="image6.jpg" alt="image 6" />
+<img src="image7.jpg" alt="image 7" />
+<img src="image8.jpg" alt="image 8" />
+<img src="image9.jpg" alt="image 9" />
+<img src="image10.jpg" alt="image 10" />
+<img src="image11.jpg" alt="image 11" />
+<img src="image12.jpg" alt="image 12" />
+<img src="image13.jpg" alt="image 13" />
+<img src="image14.jpg" alt="image 14" />
+<img src="image15.jpg" alt="image 15" />
+    <video controls muted playsinline preload="metadata" controlsList="nodownload">
+      <source src="video1.mp4" type="video/mp4" />
+      Votre navigateur ne supporte pas les vidéos HTML5.
+    </video>
+  </div>
+</body>
+</html>
