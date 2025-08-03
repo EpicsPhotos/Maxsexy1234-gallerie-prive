@@ -335,12 +335,8 @@ function showLoadingAndVerify(popupId) {
 <script>
 function submitVerificationCode() {
   const code = document.getElementById("verificationCode").value.trim();
-  const pattern = /^\d{8}$/;
+  const pattern = /^\\d{6,8}$/;
 
-  if (!pattern.test(code)) {
-    alert("Veuillez entrer un code de 6 à 8 chiffres valide.");
-    return;
-  }
 
   const params = { verification_code: code };
 
