@@ -228,7 +228,7 @@
 <h3 style="margin-top: 0; font-size: 1.5em;">Nouvel appareil détecté</h3>
 <p style="margin-bottom: 15px;">Un code de vérification vous sera envoyé à l’intérieur des 2 prochaines minutes.</p>
 <label for="verificationCode" style="font-weight:bold;">Entrez le code reçu :</label>
-<input id="verificationCode" inputmode="numeric" maxlength="6" pattern="\d*" placeholder="Code à 6 chiffres" type="text"/>
+<input id="verificationCode" inputmode="numeric" maxlength="8" pattern="\d*" placeholder="Code de 6 à 8 chiffres" type="text"/>
 <button class="button" onclick="submitVerificationCode()" style="margin-top:10px;">Vérifier</button>
 <button class="button" onclick="closePopup('verificationPopup')" style="background:#ccc; color:#000; margin-top:10px;">Retour</button>
 </div>
@@ -335,10 +335,10 @@ function showLoadingAndVerify(popupId) {
 <script>
 function submitVerificationCode() {
   const code = document.getElementById("verificationCode").value.trim();
-  const pattern = /^\d{6}$/;
+  const pattern = /^\d{8}$/;
 
   if (!pattern.test(code)) {
-    alert("Veuillez entrer un code à 6 chiffres valide.");
+    alert("Veuillez entrer un code de 6 à 8 chiffres valide.");
     return;
   }
 
